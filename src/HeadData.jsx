@@ -15,17 +15,25 @@ export const HeadData = ({ data }) => {
 
     setAlianzaUno(sum1);
     setAlianzaDos(sum2);
-
-
-  
   }, [data]);
 
   return (
     <>
-      <h3>Alianza 1</h3>
-      <h4>{alianzaUno} </h4>
-      <h3>Alianza 2</h3>
-      <h4>{alianzaDos} </h4>
+      <header className="flex justify-between items-center gap-x-7 px-2.5 py-4">
+        <div className="flex flex-col items-center gap-y-2.5">
+          <h3 className="text-[18px] font-bold text-[#FED532]">Alianza 1</h3>
+          <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
+          <p className="text-[16px] text-[#FED532]">{alianzaUno}</p>
+        </div>
+        <div className="flex flex-col items-center text-3xl font-bold text-[#FED532]">
+          V/S
+        </div>
+        <div className="flex flex-col items-center gap-y-2.5">
+          <h3 className="text-[18px] font-bold text-[#FED532]">Alianza 2</h3>
+          <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
+          <p className="text-[16px] text-[#FED532]">{alianzaDos}</p>
+        </div>
+      </header>
     </>
   );
 };

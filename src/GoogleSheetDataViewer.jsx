@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HeadData } from "./HeadData";
+import { BodyActividad } from "./BodyActividad";
 
 function GoogleSheetDataViewer() {
   const [data, setData] = useState([]);
@@ -63,30 +64,10 @@ function GoogleSheetDataViewer() {
   // Asumiendo que todos los objetos en data tienen las mismas claves (encabezados)
   const headers = Object.keys(data[0]);
 
-
-
   return (
     <div>
-      <h1>Datos de Google Sheet</h1>
-   <HeadData  data={data}/>
-      <table>
-        <thead>
-          <tr>
-            {headers.map((header, index) => (
-              <th key={index}>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((row, rowIndex) => (
-            <tr key={rowIndex}>
-              {headers.map((header, colIndex) => (
-                <td key={colIndex}>{row[header]}</td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <HeadData data={data} />
+      <BodyActividad data={data} />
     </div>
   );
 }
