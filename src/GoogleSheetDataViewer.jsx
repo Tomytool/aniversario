@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { HeadData } from "./HeadData";
 import { BodyActividad } from "./BodyActividad";
+import { BodyPuntaje } from "./BodyPuntaje";
+import { Routes, Route } from "react-router";
+import { NavMenu } from "./NavMenu";
 
 function GoogleSheetDataViewer() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [nombresAlianza, setNombresAlianza] = useState([]);
 
   // Reemplaza con la URL que obtuviste al publicar tu Google Sheet
   const GOOGLE_SHEET_CSV_URL =
@@ -66,8 +70,15 @@ function GoogleSheetDataViewer() {
 
   return (
     <div>
-      <HeadData data={data} />
-      <BodyActividad data={data} />
+      <HeadData data={data} alianza1={headers[1]} alianza2={headers[2]} />
+      <Routes>
+        <Route path="/aniversario" element={<BodyActividad data={data} />} />
+        <Route
+          path="aniversario/puntaje"
+          element={<BodyPuntaje data={data} />}
+        />
+      </Routes>
+      <NavMenu />
     </div>
   );
 }
