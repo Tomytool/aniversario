@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const HeadData = ({ data, alianza1, alianza2 }) => {
+export const HeadData = ({ data, thema }) => {
   const [alianzaUno, setAlianzaUno] = useState(0);
   const [alianzaDos, setAlianzaDos] = useState(0);
   const [nombreAlianzas, setNombreAlianza] = useState(["Roja", "Azul"]);
@@ -20,23 +20,17 @@ export const HeadData = ({ data, alianza1, alianza2 }) => {
 
   return (
     <>
-      <header className="w-screen flex items-center justify-center gap-x-5  mb-3">
+      <header className="w-80 bg-[#C3E1E1] rounded-2xl flex items-center justify-center gap-x-5  mb-4 py-2">
         <div className="flex flex-col items-center gap-y-2.5">
-          <h3 className="text-[18px] font-bold text-[#FED532]">
-            {nombreAlianzas[0]}
-          </h3>
+          <h3 className="text-[18px] font-bold">{nombreAlianzas[0]}</h3>
           <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
-          <p className="text-[16px] text-[#FED532]">{alianzaUno}</p>
+          <p className="text-[16px]">{alianzaUno}</p>
         </div>
-        <div className="flex flex-col items-center text-3xl font-bold text-[#FED532]">
-          V/S
-        </div>
+        <div className="flex flex-col items-center text-3xl font-bold">V/S</div>
         <div className="flex flex-col items-center gap-y-2.5">
-          <h3 className="text-[18px] font-bold text-[#FED532]">
-            {nombreAlianzas[1]}
-          </h3>
+          <h3 className="text-[18px] font-bold ">{nombreAlianzas[1]}</h3>
           <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
-          <p className="text-[16px] text-[#FED532]">{alianzaDos}</p>
+          <p className="text-[16px] ">{alianzaDos}</p>
         </div>
       </header>
     </>

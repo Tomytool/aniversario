@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { HeadData } from "./HeadData";
-import { BodyActividad } from "./BodyActividad";
-import { BodyPuntaje } from "./BodyPuntaje";
-import { Routes, Route } from "react-router";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { Home } from "../peges/home";
 import { NavMenu } from "./NavMenu";
+import { Puntajes } from "../peges/Puntajes";
+import { Lideres } from "../peges/Lideres";
+import { Actividades } from "../peges/Actividades";
+import { HeadData } from "./HeadData";
+import { LogoColegio } from "./LogoColegio";
 
-function GoogleSheetDataViewer() {
+export default function App() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [nombresAlianza, setNombresAlianza] = useState([]);
 
   // Reemplaza con la URL que obtuviste al publicar tu Google Sheet
   const GOOGLE_SHEET_CSV_URL =
@@ -25,7 +27,7 @@ function GoogleSheetDataViewer() {
         }
 
         const csvText = await response.text();
-        console.log("CSV Raw Text:", csvText); // Para depuración
+        // console.log("CSV Raw Text:", csvText); // Para depuración
 
         // Parsear el CSV (ejemplo simple, para CSV complejos considera una librería como 'papaparse')
         const rows = csvText.trim().split("\n");
@@ -67,20 +69,30 @@ function GoogleSheetDataViewer() {
 
   // Asumiendo que todos los objetos en data tienen las mismas claves (encabezados)
   const headers = Object.keys(data[0]);
+  console.log(data.length);
 
   return (
-    <div>
-      <HeadData data={data} alianza1={headers[1]} alianza2={headers[2]} />
-      <Routes>
-        <Route path="/aniversario" element={<BodyActividad data={data} />} />
-        <Route
-          path="aniversario/puntaje"
-          element={<BodyPuntaje data={data} />}
-        />
-      </Routes>
-      <NavMenu />
-    </div>
+    <BrowserRouter>
+      <div className="w-screen h-auto flex flex-col items-center gap-y-5">
+        <LogoColegio />
+        <HeadData data={data} />
+        <Routes>
+          <Route path="/aniversario" element={<Home data={data} />} />
+          <Route
+            path="/aniversario/puntaje"
+            element={<Puntajes data={data} />}
+          />
+          <Route
+            path="/aniversario/lideres"
+            element={<Lideres data={data} />}
+          />
+          <Route
+            path="/aniversario/actividades"
+            element={<Actividades data={data} />}
+          />
+        </Routes>
+        <NavMenu />
+      </div>
+    </BrowserRouter>
   );
 }
-
-export default GoogleSheetDataViewer;
