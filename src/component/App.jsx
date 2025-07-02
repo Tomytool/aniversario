@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Home } from "../peges/home";
+import { Home } from "../peges/Home";
 import { NavMenu } from "./NavMenu";
 import { Puntajes } from "../peges/Puntajes";
 import { Lideres } from "../peges/Lideres";
@@ -78,7 +78,7 @@ export default function App() {
         <HeadData data={data} />
         <Routes>
           {/* <Route index element={<Home data={data} />} /> */}
-          <Route path="/" element={<Home data={data} />} />
+          <Route path="/aniversario/" element={<Home data={data} />} />
           <Route
             path="/aniversario/puntaje"
             element={<Puntajes data={data} />}
