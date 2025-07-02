@@ -78,7 +78,7 @@ export default function App() {
         <HeadData data={data} />
         <Routes>
           {/* <Route index element={<Home data={data} />} /> */}
-          <Route path="/aniversario" element={<Home data={data} />} />
+          <Route path="/" element={<Home data={data} />} />
           <Route
             path="/aniversario/puntaje"
             element={<Puntajes data={data} />}
