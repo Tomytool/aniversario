@@ -7,15 +7,19 @@ export const Actividad = ({ fila, index }) => {
       <div
         key={index}
         className={
-          "flex w-80 bg-[#3F8A8A] rounded-2xl flex-col items-start px-3.5 py-3.5 gap-y-2.5 mb-2"
+          "flex w-80 bg-contenedor rounded-2xl flex-col items-start px-3.5 py-3.5 gap-y-2.5 mb-2"
         }
       >
-        <h2 className="text-[18px] font-bold">{fila.actividad}</h2>
-        <p className={mostrar ? null : "text-[16px] hidden"}>
+        <h2 className="text-lg font-bold">{fila.actividad}</h2>
+        <p className={mostrar ? null : "text-base hidden"}>
           {fila.Descripcion}
         </p>
         <button
-          className="px-3 py-1 rounded-xl bg-[#023131] text-center text-[#D5F2F2]"
+          className={
+            mostrar
+              ? "px-3 py-1 rounded-xl bg-focus text-center text-texto font-bold hover:bg-hover"
+              : "px-3 py-1 rounded-xl bg-fondo text-center text-texto font-bold hover:bg-hover"
+          }
           onClick={() => setMostrar(!mostrar)}
         >
           {mostrar ? "Ocultar..." : "Leer.."}

@@ -77,6 +77,7 @@ export default function App() {
         <LogoColegio />
         <HeadData data={data} />
         <Routes>
+          {/* <Route index element={<Home data={data} />} /> */}
           <Route path="/aniversario" element={<Home data={data} />} />
           <Route
             path="/aniversario/puntaje"

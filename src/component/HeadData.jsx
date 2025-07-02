@@ -20,17 +20,17 @@ export const HeadData = ({ data, thema }) => {
 
   return (
     <>
-      <header className="w-80 bg-[#C3E1E1] rounded-2xl flex items-center justify-center gap-x-5  mb-4 py-2">
+      <header className="w-80 bg-cabecera rounded-2xl flex items-center justify-center gap-x-5  mb-4 py-2">
         <div className="flex flex-col items-center gap-y-2.5">
           <h3 className="text-[18px] font-bold">{nombreAlianzas[0]}</h3>
           <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
-          <p className="text-[16px]">{alianzaUno}</p>
+          <p className="text-lg font-bold">{alianzaUno}</p>
         </div>
         <div className="flex flex-col items-center text-3xl font-bold">V/S</div>
         <div className="flex flex-col items-center gap-y-2.5">
           <h3 className="text-[18px] font-bold ">{nombreAlianzas[1]}</h3>
           <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
-          <p className="text-[16px] ">{alianzaDos}</p>
+          <p className="text-lg font-bold">{alianzaDos}</p>
         </div>
       </header>
     </>
