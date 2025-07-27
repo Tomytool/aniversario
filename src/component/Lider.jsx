@@ -2,7 +2,7 @@ import { BsEarbuds, BsFlagFill } from "react-icons/bs";
 
 export const Lider = ({ img, nombre }) => {
   return (
-    <section className="flex w-80 bg-contenedor rounded-2xl flex-col items-center px-3.5 py-3.5 gap-y-2.5 ">
+    <section className="flex w-80 bg-contenedor rounded-2xl flex-col items-center px-3.5 py-3.5 gap-y-2.5 md:w-[45%]">
       <div className="flex flex-col gap-y-5">
         <div className="flex items-center gap-x-3">
           {/* <div className="rounded-full w-16 h-16 bg-gray-500"></div> */}

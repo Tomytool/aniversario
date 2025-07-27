@@ -6,7 +6,7 @@ export const Actividades = ({ data }) => {
       <h2 className="text-2xl font-bold text-center mb-2">
         Actividades de Aniversario
       </h2>
-      <section>
+      <section className="md:flex md:justify-around md:flex-wrap md:py-5  ">
         {data.map((fila, index) => {
           return <Actividad key={index} fila={fila} />;
         })}
