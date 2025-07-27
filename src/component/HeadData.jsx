@@ -20,15 +20,21 @@ export const HeadData = ({ data, thema }) => {
 
   return (
     <>
-      <header className="w-80 bg-cabecera rounded-2xl flex items-center justify-center gap-x-5  mb-4 py-2">
-        <div className="flex flex-col items-center gap-y-2.5">
-          <h3 className="text-[18px] font-bold">{nombreAlianzas[0]}</h3>
+      {/* contenedor de la cabecera con puntajes totales de las alianzas  */}
+      <header className="w-full flex justify-around px-2 py-2">
+        {/* cabecera del puntaje por alianza  */}
+        <div className="w-[45%] flex flex-col items-center gap-y-2.5 bg-texto rounded-lg overflow-hidden">
+          <p className="text-[18px] font-bold bg-menu w-full px-2 py-1">
+            {nombreAlianzas[0]}
+          </p>
           <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
           <p className="text-lg font-bold">{alianzaUno}</p>
         </div>
-        <div className="flex flex-col items-center text-3xl font-bold">V/S</div>
-        <div className="flex flex-col items-center gap-y-2.5">
-          <h3 className="text-[18px] font-bold ">{nombreAlianzas[1]}</h3>
+        {/* cabecera del puntaje por alianza  */}
+        <div className="w-[45%] flex flex-col items-center gap-y-2.5 bg-texto rounded-lg overflow-hidden">
+          <p className="text-[18px] font-bold bg-menu w-full px-2 py-1">
+            {nombreAlianzas[1]}
+          </p>
           <div className="bg-neutral-400 w-24 h-24 rounded-full"></div>
           <p className="text-lg font-bold">{alianzaDos}</p>
         </div>

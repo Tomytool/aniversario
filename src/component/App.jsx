@@ -74,25 +74,16 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="w-screen h-auto flex flex-col items-center gap-y-5">
+        <NavMenu />
         <LogoColegio />
         <HeadData data={data} />
+        {/* rutas de la aplicacion  */}
         <Routes>
-          {/* <Route index element={<Home data={data} />} /> */}
-          <Route path="/aniversario/" element={<Home data={data} />} />
-          <Route
-            path="/aniversario/puntaje"
-            element={<Puntajes data={data} />}
-          />
-          <Route
-            path="/aniversario/lideres"
-            element={<Lideres data={data} />}
-          />
-          <Route
-            path="/aniversario/actividades"
-            element={<Actividades data={data} />}
-          />
+          <Route path="/" element={<Home data={data} />} />
+          <Route path="/puntaje" element={<Puntajes data={data} />} />
+          <Route path="/lideres" element={<Lideres data={data} />} />
+          <Route path="/actividades" element={<Actividades data={data} />} />
         </Routes>
-        <NavMenu />
       </div>
     </BrowserRouter>
   );
