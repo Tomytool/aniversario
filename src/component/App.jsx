@@ -79,10 +79,19 @@ export default function App() {
         <HeadData data={data} />
         {/* rutas de la aplicacion  */}
         <Routes>
-          <Route path="/" element={<Home data={data} />} />
-          <Route path="/puntaje" element={<Puntajes data={data} />} />
-          <Route path="/lideres" element={<Lideres data={data} />} />
-          <Route path="/actividades" element={<Actividades data={data} />} />
+          <Route path="/aniversario/" element={<Home data={data} />} />
+          <Route
+            path="/aniversario/puntaje"
+            element={<Puntajes data={data} />}
+          />
+          <Route
+            path="/aniversario/lideres"
+            element={<Lideres data={data} />}
+          />
+          <Route
+            path="/aniversario/actividades"
+            element={<Actividades data={data} />}
+          />
         </Routes>
       </div>
     </BrowserRouter>
