@@ -11,7 +11,7 @@ import { useState } from "react";
 
 export const NavMenu = () => {
   const [mostrar, setMostrar] = useState(false);
-  console.log(mostrar);
+
   return (
     <nav
       className={`w-screen h-auto flex flex-col justify-around items-start gap-y-3 px-2 py-4 bg-menu fixed top-0 left-0 transition-[height] duration-300 ease-in-out `}
